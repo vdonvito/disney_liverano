@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    {%block meta%}{%endblock%}
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+
+          // Add a click event on each of them
+          $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+
+              // Get the target from the "data-target" attribute
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+
+              // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+              el.classList.toggle('is-active');
+              $target.classList.toggle('is-active');
+
+            });
+          });
+        }
+      });
+    </script>
+  </head>
+  <style>
+    body {
+          margin:0;
+          padding:0;
+          }
+    .navbar {
+      background-color: #006e90;
+      background-image: linear-gradient(to bottom right,  #0096C3, #006e90);
+        }
+    #logo:hover {
+      background-color: #0096C3;
+    }
+
+    .Site {
+          display: flex;
+          min-height: 100vh;
+          flex-direction: column;
+        }
+    .Site-content {
+      flex: 1;
+    }
+    a#logo > img {
+      height: 55px;
+      max-height: 55px;
+      width: auto;
+    }
+    .footer {
+      background-color: #006e90;
+      background-image: linear-gradient(to bottom right,  #0096C3, #006e90);
+    }
+
+    }
+    /* .navbar-link {
+      color: #fff;
+    }
+    .navbar-item:hover {
+      background-color: #66b9ff;
+    }
+    .navbar-link:hover {
+      background-color: #66b9ff;
+    } */
+  </style>
+  <body class='Site'>
+    <nav class="navbar has-text-weight-bold is-spaced is-fixed-top py-2 is-info" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item py-2" href="{%url "index"%}" id="logo">
+          <img src="{%static 'logo.png'%}" alt="Disneyland">
+        </a>
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <!-- hidden on mobile -->
+        <div class="navbar-start">
+
+        </div>
+
+        <div class="navbar-end ">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Nido</a>
+            <div class="navbar-dropdown is-boxed">
+              <a class="navbar-item" href="{%url "nido_servizi"%}">Carta Dei Servizi</a>
+              <a class="navbar-item" href="{%url "nido_regolamento"%}">Regolamento</a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Primavera</a>
+            <div class="navbar-dropdown is-boxed">
+              <a class="navbar-item" href="{%url "primavera_servizi"%}">Carta Dei Servizi</a>
+              <a class="navbar-item" href="{%url "primavera_regolamento"%}">Regolamento</a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Infanzia</a>
+            <div class="navbar-dropdown is-boxed is-right">
+              <a class="navbar-item" href="{%url "ptof"%}">PTOF</a>
+              <a class="navbar-item" href="{%url "documentazione"%}">Documentazione</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="Site-content">
+      {%block content%}{%endblock%}
+    </main>
+    <section class="hero is-small mt-5">
+      <div class="hero-body">
+        <p class="title has-text-centered">
+          Hai bisogno di ulteriori informazioni?
+        </p>
+        <p class="subtitle has-text-centered ">
+          Non esitare a contattarci!
+        </p>
+        <div class="container is-max-desktop">
+          <form class="" action="index.html" method="post">
+            <div class="field">
+              <label class="label">Nome</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Mario Rossi">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="mariorossi@email.com">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Messaggio</label>
+              <div class="control">
+                <textarea class="textarea" placeholder="Corpo Messaggio"></textarea>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label class="checkbox">
+                  <input type="checkbox">
+                  Ho letto e accetto i <a href="#">Termini di Utilizzo</a> e l'<a href="#">Informativa sulla Privacy</a>.
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer class="footer mt-4 pt-4 pb-4 ">
+      <div class="content has-text-centered has-text-weight-semibold is-size-7-mobile is-size-6">
+          <p class="mb-1 has-text-white"><strong>Associazione Culturale Disneyland | Scuola dell’Infanzia Paritaria</strong></p>
+          <p class="subtitle is-6 is-size-7-mobile has-text-white mb-0 ">MicroNido - Sezione Primavera e Servizi educativi per il tempo libero “Disneyland”</p>
+          <p class="subtitle is-6 is-size-7-mobile has-text-white mb-0">Via Italo Svevo, 11 | 74019 Palagiano (Ta)</p>
+          <p class="subtitle is-6 is-size-7-mobile has-text-white mb-0">Tel./Fax <a style="color:#003545;" href="tel:0998841511">0998841511</a> | Cell. <a style="color:#003545;" href="tel:3473150188">3473150188</a> - <a style="color:#003545;" href="tel:3495871052">3495871052</a></p>
+          <p class="subtitle is-6 is-size-7-mobile has-text-white mb-0">e-mail: <a style="color:#003545;" href="mailto:scuola.disneyland@pec.it">scuola.disneyland@pec.it</a> – <a style="color:#003545;" href="mailto:scuola.disneyland@libero.it">scuola.disneyland@libero.it</a></p>
+        </div>
+    </footer>
+  </body>
+</html>

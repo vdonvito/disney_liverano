@@ -1,0 +1,87 @@
+{%extends "frontend/base.html"%}
+{% load static %}
+{%block meta%}
+<title>Regolamento Sezione Primavera</title>
+<style media="screen">
+
+</style>
+{%endblock%}
+{%block content%}
+<div class="container is-fluid pt-6 mb-auto ">
+  <div class="box  has-text-centered has-text-weight-semibold">
+    <h1 class="is-size-4 is-size-5-mobile">SCUOLE PARITARIE DI OGNI ORDINE E GRADO - DECRETO LEGGE 25 MAGGIO 2021, N. 73, CONVERTITO, CON MODIFICAZIONI, DALLA LEGGE DEL 23 LUGLIO 2021, N. 106, ART. 58 COMMA 5 E 5BIS</h1>
+  </div>
+</div>
+<div class="container is-widescreen box my-5">
+  <p class="subtitle is-6 pl-2 pt-2">a) Organizzazione interna, con particolare riferimento all'articolazione degli uffici e all'organigramma:</p>
+  <table class="table ml-3 "><tbody>
+    <tr>
+      <td>Casavola Carmela</td>
+    </tr>
+    <tr>
+      <td>Catucci Raffaele</td>
+    </tr>
+    <tr>
+      <td>Chiurlia Antonella</td>
+    </tr>
+    <tr>
+      <td>Recita Amelia</td>
+    </tr>
+  </tbody></table>
+</div>
+<div class="container is-widescreen box my-5">
+  <p class="subtitle is-6 pl-2 pt-2">b) Informazioni relative ai titolari di incarichi di collaborazione o consulenza, compresi gli estremi dell'atto di conferimento dell'incarico, il curriculum vitae e il compenso erogato:</p>
+  <p class="ml-3"><strong>NESSUNO</strong></p>
+</div>
+<div class="container is-widescreen box my-5">
+  <p class="subtitle is-6 pl-2 pt-2">c) Il conto annuale del personale e delle relative spese sostenute, con particolare riferimento ai dati relativi alla dotazione organica e al personale effettivamente in servizio e al relativo costo, nonché i tassi di assenza:</p>
+  <p class="ml-3"><strong>STATISTICHE PRESENZE/ASSENZE:</strong></p>
+  <div class="container is-widescreen my-5" style="height:70vh;">
+    <iframe id="frame1" src="{% static 'PDFs/statistica_presenze_assenze.pdf' %}#view=fitH&toolbar=1&navpanes=0&scrollbar=0" width="100%" height="100%" border="0" frameborder="no" framespacing="0" style="border:none;"></iframe>
+  </div>
+  <p class="ml-3"><strong>BILANCIO CONSUNTIVO 2020:</strong></p>
+  <div class="container is-widescreen my-5" style="height:70vh;">
+    <iframe id="frame2" src="{% static 'PDFs/bilancio_consuntivo_2020.pdf' %}#view=fitH&toolbar=1&navpanes=0&scrollbar=0" width="100%" height="100%" border="0" frameborder="no" framespacing="0" style="border:none;"></iframe>
+  </div>
+  <p class="ml-3"><strong>BILANCIO PREVENTIVO 2020:</strong></p>
+  <div class="container is-widescreen my-5" style="height:70vh;">
+    <iframe id="frame3" src="{% static 'PDFs/bilancio_previsione_2020.pdf' %}#view=fitH&toolbar=1&navpanes=0&scrollbar=0" width="100%" height="100%" border="0" frameborder="no" framespacing="0" style="border:none;"></iframe>
+  </div>
+</div>
+<div class="container is-widescreen box my-5">
+  <p class="subtitle is-6 pl-2 pt-2">d) Dati relativi al personale in servizio con contratto di lavoro non a tempo indeterminato:</p>
+  <p class="ml-3"><strong>NESSUNO</strong></p>
+</div>
+<div class="container is-widescreen box my-5">
+  <p class="subtitle is-6 pl-2 pt-2">e) I documenti e gli allegati del bilancio preventivo e del conto consuntivo:</p>
+  <p class="ml-3"><strong>BILANCIO CONSUNTIVO 2020:</strong></p>
+  <div class="container is-widescreen my-5" style="height:70vh;">
+    <iframe id="frame4" src="{% static 'PDFs/bilancio_consuntivo_2020.pdf' %}#view=fitH&toolbar=1&navpanes=0&scrollbar=0" width="100%" height="100%" border="0" frameborder="no" framespacing="0" style="border:none;"></iframe>
+  </div>
+  <p class="ml-3"><strong>BILANCIO PREVENTIVO 2020:</strong></p>
+  <div class="container is-widescreen my-5" style="height:70vh;">
+    <iframe id="frame5" src="{% static 'PDFs/bilancio_previsione_2020.pdf' %}#view=fitH&toolbar=1&navpanes=0&scrollbar=0" width="100%" height="100%" border="0" frameborder="no" framespacing="0" style="border:none;"></iframe>
+  </div>
+</div>
+<div class="container is-widescreen box my-5">
+  <p class="subtitle is-6 pl-2 pt-2">f) Le informazioni relative ai beni immobili e agli atti di gestione del patrimonio:</p>
+  <p class="ml-3"><strong>NESSUNO</strong></p>
+</div>
+<script>
+  document.getElementById("frame1").contentWindow.onload = function() {
+      this.document.getElementsByTagName("img")[0].style.width="100%";
+  };
+  document.getElementById("frame2").contentWindow.onload = function() {
+      this.document.getElementsByTagName("img")[0].style.width="100%";
+  };
+  document.getElementById("frame3").contentWindow.onload = function() {
+      this.document.getElementsByTagName("img")[0].style.width="100%";
+  };
+  document.getElementById("frame4").contentWindow.onload = function() {
+      this.document.getElementsByTagName("img")[0].style.width="100%";
+  };
+  document.getElementById("frame5").contentWindow.onload = function() {
+      this.document.getElementsByTagName("img")[0].style.width="100%";
+  };
+</script>
+{%endblock%}

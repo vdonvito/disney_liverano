@@ -1,0 +1,23 @@
+{%extends "frontend/base.html"%}
+{% load static %}
+{%block meta%}
+<title>Carta Servizi Sezione Primavera</title>
+<style media="screen">
+
+</style>
+{%endblock%}
+{%block content%}
+<div class="container is-fluid pt-6 mb-auto ">
+  <div class="box  has-text-centered has-text-weight-semibold">
+    <h1 class="is-size-4 is-size-5-mobile">Di seguito la Carta Dei Servizi della Sezione Primavera:</h1>
+  </div>
+</div>
+<div class="container is-widescreen box py-1 px-1 my-5" style="height:100vh;">
+  <iframe id="theFrame" src="{% static 'PDFs/CARTA DEI SERVIZI sez. primavera Disneyland 2020.pdf' %}#view=fitH" width="100%" height="100%" border="0" frameborder="no" framespacing="0"></iframe>
+</div>
+<script>
+document.getElementById("theFrame").contentWindow.onload = function() {
+    this.document.getElementsByTagName("img")[0].style.width="100%";
+};
+</script>
+{%endblock%}

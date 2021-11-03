@@ -1,0 +1,19 @@
+{%extends "frontend/base.html"%}
+{% load static %}
+{%block meta%}
+<title>Carta Servizi Sezione MicroNido</title>
+<style media="screen">
+
+</style>
+{%endblock%}
+{%block content%}
+<div class="container is-fluid pt-6 mb-auto ">
+  <div class="box  has-text-centered has-text-weight-semibold">
+    <h1 class="is-size-4 is-size-5-mobile">Di seguito la Carta Dei Servizi della Sezione MicroNido:</h1>
+  </div>
+</div>
+<div class="container is-widescreen box py-1 px-1 my-5" style="height:100vh;">
+  <iframe src="{% static 'PDFs/Carta dei Servizi 20-21 - nido Disneyland.pdf' %}#view=fitH" width="100%" height="100%" border="0" frameborder="no" framespacing="0"></iframe>
+</div>
+
+{%endblock%}
